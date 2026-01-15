@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" class="antialiased">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Arpit Sakhreliya — VLSI Engineer</title>
+
+    <!-- SEO / Social -->
+    <meta name="description" content="Arpit Sakhreliya — VLSI Engineer. FPGA/ASIC design, verification, RTL, low-power design, and more." />
+    <meta property="og:title" content="Arpit Sakhreliya — VLSI Engineer" />
+    <meta property="og:description" content="Portfolio of VLSI projects: RTL, FPGA, ASIC, verification, tools and workflows." />
+    <meta property="og:type" content="website" />
+
+    <!-- Tailwind CDN (quick prototyping) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fallback fonts and small custom styling -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      :root { --accent: #22c55e; --muted: #94a3b8; }
+      html { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+      /* subtle glass card background for light/dark */
+      .card-bg { background: rgba(255,255,255,0.03); backdrop-filter: blur(6px); }
+      .hover-zoom { transform-origin: center; transition: transform .28s ease, box-shadow .28s ease; }
+      .hover-zoom:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(2,6,23,0.6); }
+      /* small utilities */
+      .clip-avatar { object-fit: cover; width: 180px; height: 180px; border-radius: 9999px; }
+      /* ========================= */
+      /* 🌞 LIGHT MODE OVERRIDES */
+      /* ========================= */
+
+      body.light-mode {
+        background-color: #f8fafc; /* slate-50 */
+        color: #0f172a;           /* slate-900 */
+      }
+
+      body.light-mode .card-bg {
+        background: rgba(0, 0, 0, 0.04);
+      }
+
+      body.light-mode header,
+      body.light-mode footer {
+        background-color: rgba(255,255,255,0.85);
+        border-color: #e2e8f0;
+      }
+
+      body.light-mode .text-gray-200,
+      body.light-mode .text-gray-300,
+      body.light-mode .text-gray-400,
+      body.light-mode .text-gray-500 {
+        color: #334155;
+      }
+      body.light-mode .primary-btn {
+        background: #e0f2fe;        /* sky-100 */
+        color: #0369a1;             /* sky-700 */
+        border: 1px solid #bae6fd;  /* sky-200 */
+      }
+      body.light-mode .primary-btn:hover {
+        background: #bae6fd;        /* sky-200 */
+      }
+      body.light-mode a {
+        color: #0f172a;
+      }
+    </style>
+
+    <!-- Structured data (JSON-LD) -->
+    <script type="application/ld+json">
+      { "@context": "https://schema.org", "@type": "Person", "name": "Arpit Sakhreliya", "jobTitle": "VLSI Engineer", "url": "https://yourdomain.com", "sameAs": ["https://github.com/your-github","https://www.linkedin.com/in/your-linkedin"] }
+    </script>
+  </head>
+  <body class="bg-gray-900 text-gray-200 leading-relaxed">
+    <div class="min-h-screen flex flex-col">
+      <!-- NAV -->
+      <header class="sticky top-0 z-40 bg-gradient-to-b from-black/40 to-transparent backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+          <a href="#home" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-sky-600 to-green-400 flex items-center justify-center text-black font-bold">AS</div>
+            <div class="text-sm font-semibold">Arpit Sakhreliya</div>
+          </a>
+
+          <nav class="hidden md:flex items-center gap-6 text-sm text-gray-300">
+            <a href="#home" class="hover:text-white transition">Home</a>
+            <a href="#about" class="hover:text-white transition">About</a>
+            <a href="#projects" class="hover:text-white transition">Projects</a>
+            <a href="D:\setup\_Website\website\Docs\CV.pdf" class="hover:text-white transition">Resume</a>
+            <a href="#contact" class="hover:text-white transition">Contact</a>
+            <button id="themeToggle" title="Toggle dark/light" class="p-2 rounded-md hover:bg-white/5">🌙</button>
+          </nav>
+
+          <!-- mobile menu -->
+          <div class="md:hidden">
+            <button id="mobileToggle" class="p-2 rounded-md hover:bg-white/5">☰</button>
+          </div>
+        </div>
+
+        <!-- mobile nav panel -->
+        <div id="mobileNav" class="hidden md:hidden bg-black/60 border-t border-gray-800">
+          <div class="px-6 py-4 flex flex-col gap-3">
+            <a href="#home" class="py-2">Home</a>
+            <a href="#about" class="py-2">About</a>
+            <a href="#projects" class="py-2">Projects</a>
+            <a href="#blog" class="py-2">Blog</a>
+            <a href="#contact" class="py-2">Contact</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main class="flex-1">
+        <!-- HERO / HOME -->
+        <section id="home" class="max-w-6xl mx-auto px-6 py-12 grid md:grid-cols-3 gap-8 items-center">
+          <div class="md:col-span-2">
+            <div class="flex items-center gap-6">
+              <img id="profilePic" src="D:setup\_Website\website\Docs\img.jpeg" alt="Profile" class="clip-avatar border-2 border-gray-700" />
+              <div>
+                <h1 class="text-3xl md:text-4xl font-extrabold">Hi, I'm <span id="displayName">Arpit Sakhreliya</span></h1>
+                <p class="text-lg text-gray-300 mt-1">VLSI Engineer — specializing in <span id="vlsiFocus">FPGA & ASIC design, RTL development, and verification</span>.</p>
+                <p class="mt-4 max-w-xl text-gray-400">I design and verify high-performance digital blocks, build FPGA prototypes, and work on low-power and area-optimized implementations. I enjoy bridging architecture and silicon with efficient RTL and verification flows.</p>
+
+                <div class="flex gap-3 mt-5">
+                  <a id="linkedinBtn" href="https://linkedin.com/in/your-linkedin" class="px-4 py-2 rounded-md border border-gray-700 text-sm hover:bg-white/5">LinkedIn</a>
+                  <a id="githubBtn" href="https://github.com/your-github" class="px-4 py-2 rounded-md border border-gray-700 text-sm hover:bg-white/5">GitHub</a>
+                  <a href="#contact" class="primary-btn px-4 py-2 rounded-md bg-gradient-to-r from-sky-600 to-green-400 text-black text-sm font-semibold">Contact</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Featured projects preview -->
+            <div class="mt-8">
+              <h2 class="text-xl font-semibold">Featured Projects</h2>
+              <div id="featured" class="mt-4 grid sm:grid-cols-2 gap-4">
+                <!-- JS will populate featured projects based on the projects array below -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Side card: Skills quick list -->
+          <aside class="md:col-span-1 card-bg p-5 rounded-2xl border border-gray-800">
+            <h3 class="font-semibold">Skills</h3>
+            <ul class="mt-3 text-sm text-gray-300 space-y-2">
+              <li>Verilog, SystemVerilog</li>
+              <li>FPGA prototyping (Xilinx, vivado)</li>
+              <li>ASIC flows (Cadence, Synopsys)</li>
+              <li>Timing (STA, CDC), Clock Synthesis </li>
+              <li>UVM / SVA, Waveform analysis </li>
+              <li>Python + TCL scripting</li>
+            </ul>
+
+            <div class="mt-5">
+              <h4 class="text-sm text-gray-400">Contact</h4>
+              <div class="text-sm mt-2">
+                <div>📧 <a href="mailto:arpits@umd.edu" class="underline">arpits@umd.edu</a></div>
+                <div class="mt-1">📍 College Park, MD</div>
+              </div>
+            </div>
+          </aside>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="max-w-6xl mx-auto px-6 py-12">
+          <div class="grid md:grid-cols-3 gap-8">
+            <div class="md:col-span-2">
+              <h2 class="text-2xl font-bold">About Me</h2>
+              <p class="mt-4 text-gray-300">I'm a graduate student in Electrical & Computer Engineering with a focus on VLSI design, verification, and accelerator architectures. I have worked on RTL implementations, cache and memory system projects, FPGA-based prototypes, and ASIC tapeout flows during internships and academic work.</p>
+
+              <h3 class="mt-6 font-semibold">Journey</h3>
+              <p class="mt-2 text-gray-300">My VLSI journey started with digital logic and progressed to building synthesizable RTL, performing timing closure, and learning full ASIC flows. I enjoy optimizing microarchitecture for performance and power, and bringing complex designs from algorithm to silicon.</p>
+
+              <h3 class="mt-6 font-semibold">Tools & Workflows</h3>
+              <p class="mt-2 text-gray-300">Cadence Virtuoso, Synopsys Design Compiler, Vivado, Primetime, UVM verification, scripting with Python & TCL.</p>
+            </div>
+
+            <aside class="card-bg p-5 rounded-2xl border border-gray-800">
+              <h4 class="font-semibold">Quick Facts</h4>
+              <ul class="mt-3 text-sm text-gray-300 space-y-2">
+                <li><strong>- Degree:</strong> Masters in Electrical & Computer Engineering (UMD)</li>
+                <li><strong>- Interests:</strong> AI/ML accelerators, high-performance RTL & microarchitecture, PPA-driven ASIC design, hardware software co-design</li>
+                <li><strong>- Open to:</strong> Full-time roles & Collaboration</li>
+              </ul>
+            </aside>
+          </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section id="projects" class="max-w-6xl mx-auto px-6 py-12">
+          <h2 class="text-2xl font-bold">Projects</h2>
+          <p class="mt-2 text-gray-400">A selection of recent projects, including summaries, tools used, and links to the code.</p>
+
+          <div id="projectsGrid" class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- JS will populate project cards -->
+          </div>
+
+          <div class="mt-8">
+            <h3 class="font-semibold">GitHub Repositories</h3>
+            <div id="githubRepos" class="mt-4 grid sm:grid-cols-2 gap-4"></div>
+          </div>
+
+        </section>
+
+
+        <!-- BLOG (optional) -->
+<!--
+        <section id="blog" class="max-w-6xl mx-auto px-6 py-12">
+          <h2 class="text-2xl font-bold">Articles & Notes</h2>
+          <p class="mt-2 text-gray-400">Technical write-ups, tutorials, and research notes. (Optional — populate manually or link to a blog)</p>
+
+          <div class="mt-6 grid md:grid-cols-2 gap-6">
+            <article class="p-5 card-bg rounded-2xl border border-gray-800 hover-zoom">
+              <h4 class="font-semibold">Designing a Minimal Systolic Array on an FPGA</h4>
+              <p class="mt-2 text-sm text-gray-300">Walkthrough of an FPGA systolic-array implementation for matrix multiplication and performance considerations.</p>
+              <div class="mt-3 text-sm text-gray-400">Published: Jan 2025</div>
+            </article>
+
+            <article class="p-5 card-bg rounded-2xl border border-gray-800 hover-zoom">
+              <h4 class="font-semibold">UVM Tips for Efficient Verification</h4>
+              <p class="mt-2 text-sm text-gray-300">Practical tips to speed up UVM testbench development and debugging flows.</p>
+              <div class="mt-3 text-sm text-gray-400">Published: Nov 2024</div>
+            </article>
+          </div>
+        </section>
+
+-->
+
+        <!-- CONTACT -->
+        <section id="contact" class="max-w-6xl mx-auto px-6 py-12">
+          <h2 class="text-2xl font-bold">Get in touch</h2>
+          <p class="mt-2 text-gray-400">I'd love to hear about interesting problems, collaboration, or job opportunities.</p>
+
+          <div class="mt-6 grid md:grid-cols-2 gap-8">
+            <div class="card-bg p-6 rounded-2xl border border-gray-800">
+              <h4 class="font-semibold">Email</h4>
+              <p class="mt-2 text-gray-300">Send me an email at <a class="underline" href="mailto:arpits@umd.edu">arpits@umd.edu</a></p>
+
+              <h4 class="mt-4 font-semibold">Social</h4>
+              <div class="mt-2 flex gap-3">
+                <a id="linkedinFooter" href="https://linkedin.com/in/your-linkedin" class="px-3 py-2 rounded-md border border-gray-700">LinkedIn</a>
+                <a id="githubFooter" href="https://github.com/your-github" class="px-3 py-2 rounded-md border border-gray-700">GitHub</a>
+              </div>
+            </div>
+
+            <form class="p-6 card-bg rounded-2xl border border-gray-800" action="mailto:arpits@umd.edu" method="get" encType="text/plain">
+              <label class="block text-sm text-gray-300">Your name</label>
+              <input name="name" class="mt-2 w-full p-2 rounded-md bg-transparent border border-gray-700" />
+
+              <label class="block text-sm text-gray-300 mt-4">Message</label>
+              <textarea name="message" rows="5" class="mt-2 w-full p-2 rounded-md bg-transparent border border-gray-700"></textarea>
+
+              <div class="mt-4 flex items-center justify-between">
+                <div class="text-xs text-gray-400">Or email directly: <a href="mailto:arpits@umd.edu" class="underline">arpits@umd.edu</a></div>
+                <button type="submit" class="primary-btn px-4 py-2 rounded-md bg-gradient-to-r from-sky-600 to-green-400 text-black font-semibold">Send</button>
+              </div>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer class="border-t border-gray-800 bg-black/40">
+        <div class="max-w-6xl mx-auto px-6 py-6 text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+          <div>© <span id="copyrightYear"></span> Arpit Sakhreliya — VLSI Engineer</div>
+          <div class="mt-3 md:mt-0">Built with ♥ — <a href="#home" class="underline">View portfolio</a></div>
+        </div>
+      </footer>
+
+    </div>
+
+    <!-- Inline JS to power dynamic parts (small and dependency free) -->
+    <script>
+      // small data placeholders — replace with your content
+      const AUTHOR_NAME = 'Arpit Sakhreliya';
+      const VLSI_FOCUS = 'ASIC design, RTL development, and verification';
+      const GITHUB_USER = 'Arpit-sakhreliya'; // <--- replace with your GitHub username
+      const LINKEDIN_PROFILE = 'arpitsakhreliya'; // replace
+
+      // sample projects array — edit with your projects
+      const projects = [
+        {
+          title: 'MAC Unit — 14 nm ASIC design',
+          desc: 'High-performance MAC unit achieving 2.225 GOPS using a Dadda multiplier and Kogge–Stone adder, validated with full DRC/LVS and Spectre transient analysis for timing and power closure.',
+          tags: ['Cadence','DRC/LVS','PPA Optimization, ASIC Layout'],
+          img: '',
+          repo: 'https://github.com/Arpit-sakhreliya/MAC-Unit'
+        },
+        {
+          title: 'Systolic Array on FPGA',
+          desc: 'Systolic-array accelerator for matrix multiplication implemented on a Nexys DDR4 FPGA, leveraging pipelined parallel dataflow and validated with RTL testbenches, SVA, and functional coverage.',
+          tags: ['Verilog','Vivado','functional coverage', 'SVA'],
+          img: '',
+          repo: 'https://github.com/Arpit-sakhreliya/systolic-fpga'
+        },
+        {
+          title: 'Out-of-Order RISC-V Pipeline (sim)',
+          desc: 'Cycle-accurate RV32I-F simulator for an out-of-order 7-stage pipeline with Tomasulo-style scheduling, scoreboarding, and hazard resolution.',
+          tags: ['C++','Microarchitecture','performance validation'],
+          img: '',
+          repo: 'https://github.com/Arpit-sakhreliya/ooo-riscv'
+        },
+        {
+          title: 'Cache Simulator & MESI',
+          desc: 'Trace-based cache simulator modeling multi-level hierarchies and MESI coherence, analyzing miss rate, AMAT, and energy–performance trade-offs using CACTI.',
+          tags: ['C++','Cacti','MESI','Memory Hierarchy'],
+          img: '',
+          repo: 'https://github.com/Arpit-sakhreliya/cache-sim'
+        }
+      ];
+
+      // populate dynamic UI
+      document.getElementById('displayName').innerText = AUTHOR_NAME;
+      document.getElementById('vlsiFocus').innerText = VLSI_FOCUS;
+      document.getElementById('profilePic').src = `D:setup/_Website/website/Docs/img.jpeg`;
+      document.getElementById('githubBtn').href = `https://github.com/${GITHUB_USER}`;
+      document.getElementById('githubFooter').href = `https://github.com/${GITHUB_USER}`;
+      document.getElementById('linkedinBtn').href = `https://linkedin.com/in/${LINKEDIN_PROFILE}`;
+      document.getElementById('linkedinFooter').href = `https://linkedin.com/in/${LINKEDIN_PROFILE}`;
+      document.getElementById('copyrightYear').innerText = new Date().getFullYear();
+
+      // featured projects
+      const featured = document.getElementById('featured');
+      projects.slice(0,2).forEach(p => {
+        const el = document.createElement('a');
+        el.className = 'p-4 rounded-2xl border border-gray-800 card-bg hover-zoom block';
+        el.href = p.repo || '#';
+        el.target = '_blank';
+        el.innerHTML = `<h4 class="font-semibold">${p.title}</h4><p class="mt-2 text-sm text-gray-300">${p.desc}</p><div class="mt-3 text-xs text-gray-400">${p.tags.join(' • ')}</div>`;
+        featured.appendChild(el);
+      });
+
+      // projects grid
+      const grid = document.getElementById('projectsGrid');
+      projects.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'p-4 rounded-2xl border border-gray-800 card-bg hover-zoom';
+        card.innerHTML = `<h4 class="font-semibold">${p.title}</h4>
+          <p class="mt-2 text-sm text-gray-300">${p.desc}</p>
+          <div class="mt-3 text-xs text-gray-400">${p.tags.join(' • ')}</div>
+          <div class=\"mt-4\"><a href=\"${p.repo}\" target=\"_blank\" class=\"text-sm underline\">View code</a></div>`;
+        grid.appendChild(card);
+      });
+
+      // GitHub integration (latest repos)
+      async function loadGithubRepos() {
+        if (!GITHUB_USER || GITHUB_USER === 'your-github') return;
+        const skipRepos = ['Arpit-sakhreliya.github.io', 'cs50-Ai','MAC-Unit','systolic-fpga','ooo-riscv','cache-sim']; // <-- put the names of repos you don't want to show
+        const url = `https://api.github.com/users/${GITHUB_USER}/repos?sort=updated&per_page=6`;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error('GitHub API error');
+            const repos = await res.json();
+
+            const container = document.getElementById('githubRepos');
+            
+            repos
+              .filter(r => !skipRepos.includes(r.name)) // exclude unwanted repos
+              .slice(0, 6) // limit to 6 repos after filtering
+              .forEach(r => {
+                const el = document.createElement('a');
+                el.className = 'p-4 rounded-2xl border border-gray-800 card-bg hover-zoom block';
+                el.href = r.html_url;
+                el.target = '_blank';
+                el.innerHTML = `
+                  <div class="flex items-center justify-between">
+                    <strong>${r.name}</strong>
+                    <span class="text-xs text-gray-400">★ ${r.stargazers_count}</span>
+                  </div>
+                  <p class="mt-2 text-sm text-gray-300">${r.description || ''}</p>
+                `;
+                container.appendChild(el);
+              });
+        } catch (e) {
+          console.warn('Failed to load GitHub repos', e);
+        }
+      }
+      loadGithubRepos();
+
+      // mobile nav toggle
+      document.getElementById('mobileToggle').addEventListener('click', () => {
+        const panel = document.getElementById('mobileNav');
+        panel.classList.toggle('hidden');
+      });
+
+      // theme toggle (simple dark/light)
+      const themeToggle = document.getElementById('themeToggle');
+      function initTheme() {
+        const saved = localStorage.getItem('site-theme');
+        if (saved === 'light') document.documentElement.classList.add('light');
+        // page uses tailwind default dark-like colors; to implement full light theme, expand this.
+      }
+      themeToggle.addEventListener('click', () => {
+        // simple toggle: invert background/colors for quick preview
+        if (document.body.classList.contains('light-mode')) {
+          document.body.classList.remove('light-mode');
+          localStorage.setItem('site-theme','dark');
+          themeToggle.textContent = '🌙';
+        } else {
+          document.body.classList.add('light-mode');
+          localStorage.setItem('site-theme','light');
+          themeToggle.textContent = '☀️';
+        }
+      });
+      initTheme();
+
+      // small accessibility: focus outlines on keyboard nav only
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Tab') document.body.classList.add('show-focus-outline');
+      });
+
+    </script>
+  </body>
+</html>
