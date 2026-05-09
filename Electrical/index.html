@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arpit Sakhreliya — Hardware Engineer</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>
+tailwind.config={theme:{extend:{colors:{ivory:'#F5F0E8',sand:'#EDE5D8',graphite:'#5A6270',olive:'#6B7F5E',slate:'#2C3530',deepslate:'#1A2320',terracotta:'#C45C3C',scope:'#2D8B4E',copper:'#C17F3E',emerald:'#1B6B4A',warmblack:'#1E1E1C',bdr:'#C4BFB3',linkedin:'#0A66C2'},fontFamily:{serif:['DM Serif Display','Georgia','serif'],sans:['Inter','system-ui','sans-serif'],mono:['JetBrains Mono','monospace']}}}}
+</script>
+<style>
+body{font-family:'Inter',sans-serif;background:#F5F0E8;color:#2C3530}
+html{scroll-behavior:smooth}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:#F5F0E8}
+::-webkit-scrollbar-thumb{background:#C4BFB3;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:#A39E92}
+.paper-tex{background-image:url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E")}
+.blueprint-g{background-image:linear-gradient(rgba(107,127,94,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(107,127,94,.05) 1px,transparent 1px);background-size:40px 40px}
+.tech-lbl{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase}
+@keyframes scopeTrace{0%{stroke-dashoffset:800}100%{stroke-dashoffset:0}}
+.scope-trace{stroke-dasharray:800;animation:scopeTrace 4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.led-blink{animation:blink 2s ease-in-out infinite}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+.fade-up{opacity:0;animation:fadeUp .7s ease-out forwards}
+.fd1{animation-delay:.1s}.fd2{animation-delay:.2s}.fd3{animation-delay:.3s}.fd4{animation-delay:.4s}.fd5{animation-delay:.5s}.fd6{animation-delay:.6s}
+.project-card{transition:all .4s cubic-bezier(.25,.46,.45,.94)}
+.project-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(26,35,32,.08)}
+.project-card:hover .proj-img{transform:scale(1.03)}
+.proj-img{transition:transform .6s cubic-bezier(.25,.46,.45,.94)}
+.focus-card{transition:all .3s ease;border:1px solid rgba(196,191,179,.3)}
+.focus-card:hover{border-color:rgba(196,191,179,.6);background:#FAF7F2;transform:translateY(-2px);box-shadow:0 8px 24px rgba(26,35,32,.06)}
+.cta-p{background:#2C3530;color:#F5F0E8;transition:all .25s ease}
+.cta-p:hover{background:#1A2320;transform:translateY(-1px);box-shadow:0 4px 12px rgba(44,53,48,.2)}
+.cta-s{border:1px solid #2C3530;color:#2C3530;transition:all .25s ease}
+.cta-s:hover{background:#2C3530;color:#F5F0E8;transform:translateY(-1px)}
+.pub-card{border-left:3px solid #C45C3C;transition:all .3s ease}
+.pub-card:hover{border-left-color:#C17F3E;background:#FAF7F2}
+.nav-link{position:relative;transition:color .2s ease}
+.nav-link::after{content:'';position:absolute;bottom:-2px;left:0;width:0;height:1px;background:#C45C3C;transition:width .3s ease}
+.nav-link:hover::after{width:100%}
+.nav-link:hover{color:#C45C3C}
+.section-div{height:1px;background:linear-gradient(to right,transparent,#C4BFB3 20%,#C4BFB3 80%,transparent)}
+.mobile-menu{transform:translateX(100%);transition:transform .3s ease}
+.mobile-menu.open{transform:translateX(0)}
+.metric-v{font-variant-numeric:tabular-nums}
+.nav-solid{background:rgba(245,240,232,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(196,191,179,.3)}
+@keyframes scrollDown{0%{opacity:0;transform:translateY(-8px)}50%{opacity:1}100%{opacity:0;transform:translateY(8px)}}
+.scroll-ind{animation:scrollDown 2s ease-in-out infinite}
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(2.2);opacity:0}}
+.pulse-ring{animation:pulse-ring 2s ease-out infinite}
+/* Gallery styles */
+.gallery-main{position:relative;overflow:hidden;background:#1A2320}
+.gallery-main img,.gallery-main video{transition:opacity .4s ease;width:100%;height:100%;object-fit:cover;display:block}
+.gallery-thumb{transition:all .2s ease;border:2px solid transparent;opacity:.6;object-fit:cover}
+.gallery-thumb.active,.gallery-thumb:hover{opacity:1;border-color:#C45C3C}
+.gallery-nav{transition:all .2s ease;opacity:0}
+.gallery-main:hover .gallery-nav{opacity:1}
+.gallery-nav:hover{background:rgba(26,35,32,.85)!important}
+/* Lightbox */
+.lightbox{position:fixed;inset:0;z-index:100;background:rgba(26,35,32,.95);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(8px)}
+.lightbox.open{opacity:1;pointer-events:auto}
+.lightbox img,.lightbox video{max-width:90vw;max-height:85vh;object-fit:contain;border-radius:4px}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(245,240,232,.1);border:1px solid rgba(196,191,179,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s ease;color:#F5F0E8}
+.lightbox-nav:hover{background:rgba(245,240,232,.2);border-color:rgba(196,191,179,.4)}
+.lightbox-counter{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(245,240,232,.5)}
+.footer-link{transition:all .2s ease;color:rgba(245,240,232,.6)}
+.footer-link:hover{color:#C45C3C}
+.footer-social{transition:all .25s ease;border:1px solid rgba(196,191,179,.15);background:rgba(245,240,232,.05)}
+.footer-social:hover{transform:translateY(-2px)}
+/* Fixed height containers for featured projects */
+.gallery-featured{height:420px}
+.gallery-grid{height:260px}
+/* Video badge pulse */
+@keyframes vblink{0%,100%{opacity:1}50%{opacity:.5}}
+.v-blink{animation:vblink 1.5s ease-in-out infinite}
+</style>
+</head>
+<body class="paper-tex">
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox(event)">
+  <button onclick="lbNav(-1)" class="lightbox-nav" style="left:20px"><span class="iconify" data-icon="mdi:chevron-left" data-width="24"></span></button>
+  <div id="lbMediaContainer" style="max-width:90vw;max-height:85vh;display:flex;align-items:center;justify-content:center"></div>
+  <button onclick="lbNav(1)" class="lightbox-nav" style="right:20px"><span class="iconify" data-icon="mdi:chevron-right" data-width="24"></span></button>
+  <button onclick="closeLightbox(event,true)" class="absolute top-6 right-6 text-ivory/60 hover:text-ivory transition-colors"><span class="iconify" data-icon="mdi:close" data-width="28"></span></button>
+  <div id="lbCounter" class="lightbox-counter"></div>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+<div class="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between h-16">
+  <a href="#" class="font-serif text-lg text-slate tracking-tight">AS</a>
+  <div class="hidden md:flex items-center gap-8">
+    <a href="#projects" class="nav-link text-xs font-medium tracking-wider uppercase text-graphite">Projects</a>
+    <a href="#research" class="nav-link text-xs font-medium tracking-wider uppercase text-graphite">Research</a>
+    <a href="#philosophy" class="nav-link text-xs font-medium tracking-wider uppercase text-graphite">Philosophy</a>
+    <a href="#contact" class="nav-link text-xs font-medium tracking-wider uppercase text-graphite">Contact</a>
+    <div class="flex items-center gap-2 ml-4">
+      <span class="relative flex h-2 w-2"><span class="pulse-ring absolute inline-flex h-full w-full rounded-full bg-scope opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-scope led-blink"></span></span>
+      <span class="tech-lbl text-scope">Available</span>
+    </div>
+  </div>
+  <button id="menuBtn" class="md:hidden text-slate"><span class="iconify" data-icon="mdi:menu" data-width="24"></span></button>
+</div>
+</nav>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-ivory">
+<div class="flex items-center justify-between px-6 h-16">
+  <span class="font-serif text-lg text-slate">AS</span>
+  <button id="menuClose" class="text-slate"><span class="iconify" data-icon="mdi:close" data-width="24"></span></button>
+</div>
+<div class="flex flex-col items-center justify-center gap-8 pt-20">
+  <a href="#projects" class="mob-link font-serif text-2xl text-slate">Projects</a>
+  <a href="#research" class="mob-link font-serif text-2xl text-slate">Research</a>
+  <a href="#philosophy" class="mob-link font-serif text-2xl text-slate">Philosophy</a>
+  <a href="#contact" class="mob-link font-serif text-2xl text-slate">Contact</a>
+  <div class="flex items-center gap-2 mt-4">
+    <span class="relative flex h-2 w-2"><span class="relative inline-flex rounded-full h-2 w-2 bg-scope led-blink"></span></span>
+    <span class="tech-lbl text-scope">Available for Opportunities</span>
+  </div>
+</div>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="relative min-h-screen flex items-end overflow-hidden">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1920&q=80" alt="Humanoid Robot Hardware" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-t from-deepslate via-deepslate/70 to-deepslate/40"></div>
+    <div class="absolute inset-0 blueprint-g opacity-30"></div>
+  </div>
+  <svg class="absolute bottom-0 left-0 right-0 w-full h-32 opacity-20" viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path class="scope-trace" d="M0,80 C120,80 140,40 240,40 C340,40 360,90 480,90 C600,90 620,30 720,30 C820,30 840,70 960,70 C1080,70 1100,20 1200,20 C1300,20 1320,60 1440,60" fill="none" stroke="#2D8B4E" stroke-width="1.5"/>
+    <path class="scope-trace" style="animation-delay:.5s" d="M0,90 C100,90 160,50 280,50 C400,50 440,100 560,100 C680,100 720,45 840,45 C960,45 1000,85 1120,85 C1240,85 1280,35 1440,35" fill="none" stroke="#C45C3C" stroke-width="1" opacity="0.6"/>
+  </svg>
+  <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 w-full">
+    <div class="fade-up fd1">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-terracotta"></div>
+        <span class="tech-lbl text-terracotta tracking-widest">Hardware Engineer</span>
+      </div>
+    </div>
+    <h1 class="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-ivory leading-[0.95] tracking-tight fade-up fd2">
+      Arpit<br>Sakhreliya
+    </h1>
+    <p class="mt-4 md:mt-6 text-ivory/60 text-sm md:text-base font-light max-w-xl fade-up fd3">
+      MS Electrical &amp; Computer Engineering — University of Maryland
+    </p>
+    <p class="mt-1 text-ivory/40 text-xs tracking-wider uppercase fade-up fd3">
+      Embedded Systems &nbsp;·&nbsp; Robotics &nbsp;·&nbsp; FPGA &nbsp;·&nbsp; Hardware Architecture
+    </p>
+    <p class="mt-8 md:mt-10 text-ivory/80 text-base md:text-lg font-light leading-relaxed max-w-2xl fade-up fd4 italic font-serif">
+      "Building reliable intelligent hardware systems at the intersection of robotics, embedded computing, and computer architecture."
+    </p>
+    <div class="flex flex-wrap gap-3 mt-10 fade-up fd5">
+      <a href="#projects" class="cta-p px-6 py-3 text-sm font-medium tracking-wide rounded">View Projects</a>
+      <a href="#research" class="cta-s px-6 py-3 text-sm font-medium tracking-wide rounded border-ivory/30 text-ivory hover:bg-ivory hover:text-slate">Research &amp; Publications</a>
+      <a href="ArpitSakhreliya.pdf" class="px-6 py-3 text-sm font-medium tracking-wide text-ivory/60 hover:text-ivory transition-colors flex items-center gap-2">
+        <span class="iconify" data-icon="mdi:file-download-outline" data-width="16"></span> Resume
+      </a>
+    </div>
+    <div class="hidden md:flex items-center gap-3 mt-16 fade-up fd6">
+      <div class="w-px h-8 bg-ivory/20 relative overflow-hidden">
+        <div class="w-full h-3 bg-ivory/60 scroll-ind absolute top-0"></div>
+      </div>
+      <span class="tech-lbl text-ivory/30">Scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ENGINEERING FOCUS AREAS ===== -->
+<section class="py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="w-8 h-px bg-terracotta"></div>
+    <span class="tech-lbl text-terracotta">Domains</span>
+  </div>
+  <h2 class="font-serif text-3xl md:text-5xl text-slate tracking-tight mb-16">Engineering Focus Areas</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="focus-card rounded-xl bg-ivory overflow-hidden flex flex-col">
+      <div class="h-1.5 bg-terracotta w-full"></div>
+      <div class="p-8 flex flex-col h-full">
+        <div class="flex items-start justify-between mb-5">
+          <div class="w-12 h-12 rounded-lg bg-terracotta/10 flex items-center justify-center border border-terracotta/20">
+            <span class="iconify text-terracotta" data-icon="mdi:chip" data-width="24"></span>
+          </div>
+          <span class="tech-lbl text-graphite/30 text-sm font-medium">01</span>
+        </div>
+        <h3 class="font-serif text-2xl text-slate mb-1.5 tracking-tight">Embedded Systems</h3>
+        <p class="text-graphite/70 text-sm font-light mb-6 leading-relaxed">Low-level firmware and board-level system design</p>
+        <div class="mt-auto pt-6 border-t border-bdr/40">
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">STM32 / nRF52 / Jetson Nano</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">RTOS Development</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Sensor Fusion (IMU, Encoders)</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">CAN / LIN Communication</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Board Bring-up &amp; Debugging</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="focus-card rounded-xl bg-ivory overflow-hidden flex flex-col">
+      <div class="h-1.5 bg-scope w-full"></div>
+      <div class="p-8 flex flex-col h-full">
+        <div class="flex items-start justify-between mb-5">
+          <div class="w-12 h-12 rounded-lg bg-scope/10 flex items-center justify-center border border-scope/20">
+            <span class="iconify text-scope" data-icon="mdi:robot-industrial" data-width="24"></span>
+          </div>
+          <span class="tech-lbl text-graphite/30 text-sm font-medium">02</span>
+        </div>
+        <h3 class="font-serif text-2xl text-slate mb-1.5 tracking-tight">Robotics &amp; Motor Control</h3>
+        <p class="text-graphite/70 text-sm font-light mb-6 leading-relaxed">Real-time motion control and autonomous systems</p>
+        <div class="mt-auto pt-6 border-t border-bdr/40">
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">AGV Systems</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">BLDC / DC Motor Control</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">PID and Adaptive Control</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">IMU Integration &amp; EKF</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Real-time Control Loops</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="focus-card rounded-xl bg-ivory overflow-hidden flex flex-col">
+      <div class="h-1.5 bg-copper w-full"></div>
+      <div class="p-8 flex flex-col h-full">
+        <div class="flex items-start justify-between mb-5">
+          <div class="w-12 h-12 rounded-lg bg-copper/10 flex items-center justify-center border border-copper/20">
+            <span class="iconify text-copper" data-icon="mdi:memory" data-width="24"></span>
+          </div>
+          <span class="tech-lbl text-graphite/30 text-sm font-medium">03</span>
+        </div>
+        <h3 class="font-serif text-2xl text-slate mb-1.5 tracking-tight">FPGA &amp; Digital Architecture</h3>
+        <p class="text-graphite/70 text-sm font-light mb-6 leading-relaxed">Custom digital hardware and accelerator design</p>
+        <div class="mt-auto pt-6 border-t border-bdr/40">
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">DSP Pipelines</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">TPU-inspired Accelerators</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Verilog / SystemVerilog</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Timing Closure &amp; STA</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Systolic Array Architectures</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="focus-card rounded-xl bg-ivory overflow-hidden flex flex-col">
+      <div class="h-1.5 bg-emerald w-full"></div>
+      <div class="p-8 flex flex-col h-full">
+        <div class="flex items-start justify-between mb-5">
+          <div class="w-12 h-12 rounded-lg bg-emerald/10 flex items-center justify-center border border-emerald/20">
+            <span class="iconify text-emerald" data-icon="mdi:developer-board" data-width="24"></span>
+          </div>
+          <span class="tech-lbl text-graphite/30 text-sm font-medium">04</span>
+        </div>
+        <h3 class="font-serif text-2xl text-slate mb-1.5 tracking-tight">Hardware Design</h3>
+        <p class="text-graphite/70 text-sm font-light mb-6 leading-relaxed">PCB engineering, power systems, and product reliability</p>
+        <div class="mt-auto pt-6 border-t border-bdr/40">
+          <div class="flex flex-wrap gap-2">
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Multi-layer PCB Design</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">PDN Engineering</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">EMI / EMC Mitigation</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Thermal &amp; IPC-Compliant Design</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">Power Electronics</span>
+            <span class="tech-lbl text-[10px] px-2.5 py-1 rounded bg-sand/80 text-graphite">DFM / DFT Validation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="section-div max-w-7xl mx-auto"></div>
+
+<!-- ===== FEATURED PROJECTS ===== -->
+<section id="projects" class="py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="w-8 h-px bg-terracotta"></div>
+    <span class="tech-lbl text-terracotta">Portfolio</span>
+  </div>
+  <h2 class="font-serif text-3xl md:text-5xl text-slate tracking-tight mb-4">Featured Projects</h2>
+  <p class="text-graphite font-light max-w-2xl mb-16">Selected hardware systems from concept through validation — spanning autonomous robotics, AI acceleration, and precision motor control.</p>
+
+  <!-- PROJECT 1: AMR -->
+  <div class="project-card rounded-xl overflow-hidden bg-sand mb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="relative flex flex-col">
+        <!-- Main Gallery Image -->
+        <div class="gallery-main gallery-featured" data-gallery="amr">
+          <img id="amr-img" src="Images/project1_1.png" alt="Autonomous Mobile Robot" class="proj-img cursor-pointer" onclick="openLightbox('amr',0)" style="width:100%;height:100%;object-fit:cover">
+          <button onclick="galleryNav('amr',-1)" class="gallery-nav absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-left" data-width="20"></span></button>
+          <button onclick="galleryNav('amr',1)" class="gallery-nav absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-right" data-width="20"></span></button>
+          <div class="absolute top-4 left-4 flex items-center gap-2 z-10">
+            <span class="tech-lbl text-[10px] px-2 py-1 rounded bg-deepslate/80 text-scope backdrop-blur-sm">FEATURED</span>
+          </div>
+          <div class="absolute bottom-4 right-4 tech-lbl text-[9px] text-ivory/60 z-10">
+            <div class="flex items-center gap-1 justify-end"><span class="w-1.5 h-1.5 rounded-full bg-scope led-blink"></span> SYSTEM ACTIVE</div>
+          </div>
+        </div>
+        <!-- Thumbnails -->
+        <div class="flex gap-2 p-3 bg-deepslate/5 overflow-x-auto">
+          <img src="Images/project1_1.png" alt="AMR View 1" class="gallery-thumb active flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('amr','Images/project1_1.png',this)">
+          <img src="Images/project1_2.png" alt="AMR View 2" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('amr','Images/project1_2.png',this)">
+          <img src="Images/Project1_3.png" alt="AMR View 3" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('amr','Images/Project1_3.png',this)">
+          <img src="Images/project1_4.png" alt="AMR View 4" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('amr','Images/project1_4.png',this)">
+          <img src="Images/project1_5.png" alt="AMR View 5" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('amr','Images/project1_5.png',this)">
+        </div>
+      </div>
+      <div class="p-8 md:p-10 flex flex-col justify-center">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="tech-lbl text-[10px] text-terracotta">ROBOTICS</span>
+          <span class="text-bdr">·</span>
+          <span class="tech-lbl text-[10px] text-graphite">2024</span>
+        </div>
+        <h3 class="font-serif text-2xl md:text-3xl text-slate mb-4">Autonomous Mobile Robot Platform</h3>
+        <p class="text-graphite font-light text-sm leading-relaxed mb-6">Full-stack autonomous navigation platform with custom 4-layer PCB integrating motor drivers, LiDAR interface, and STM32-based real-time path planning. Achieved 0.05m positional accuracy in structured indoor environments.</p>
+        <div class="grid grid-cols-3 gap-4 mb-6 py-4 border-t border-b border-bdr/40">
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">0.05m</span><br><span class="tech-lbl text-[9px] text-graphite">POS. ACCURACY</span></div>
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">6-Layer</span><br><span class="tech-lbl text-[9px] text-graphite">PCB STACKUP</span></div>
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">1kHz</span><br><span class="tech-lbl text-[9px] text-graphite">CTRL LOOP</span></div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">STM32F4</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">ROS2</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">BLDC</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">LiDAR</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">FreeRTOS</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">CAN Bus</span>
+        </div>
+        <p class="text-xs text-graphite/70 leading-relaxed"><span class="font-medium text-graphite">Key Challenge:</span> Resolving EMI coupling between motor driver switching noise and LiDAR UART communication through controlled-impedance routing and strategic ground plane partitioning.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 2: TPU — VIDEO-ONLY PROJECT -->
+  <div class="project-card rounded-xl overflow-hidden bg-sand mb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="p-8 md:p-10 flex flex-col justify-center order-2 lg:order-1">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="tech-lbl text-[10px] text-copper">FPGA</span>
+          <span class="text-bdr">·</span>
+          <span class="tech-lbl text-[10px] text-graphite">2024</span>
+        </div>
+        <h3 class="font-serif text-2xl md:text-3xl text-slate mb-4">TPU-v1 Inspired AI Accelerator</h3>
+        <p class="text-graphite font-light text-sm leading-relaxed mb-6">Systolic array-based matrix multiplication engine on FPGA, inspired by Google's TPU architecture. Implemented 8×8 PE array with weight-stationary dataflow, achieving 12.8 GOPS throughput for INT8 operations.</p>
+        <div class="grid grid-cols-3 gap-4 mb-6 py-4 border-t border-b border-bdr/40">
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">12.8</span><br><span class="tech-lbl text-[9px] text-graphite">GOPS INT8</span></div>
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">8×8</span><br><span class="tech-lbl text-[9px] text-graphite">SYSTOLIC ARRAY</span></div>
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">150MHz</span><br><span class="tech-lbl text-[9px] text-graphite">FREQ. ACHIEVED</span></div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">Verilog</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">Xilinx Vivado</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">Systolic Array</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">AXI4</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">Timing Closure</span>
+        </div>
+        <p class="text-xs text-graphite/70 leading-relaxed"><span class="font-medium text-graphite">Key Challenge:</span> Meeting 150MHz timing closure across the systolic array datapath while managing routing congestion — solved through pipeline insertion and register retiming strategies.</p>
+      </div>
+      <!-- VIDEO PANEL -->
+      <div class="relative order-1 lg:order-2 flex flex-col">
+        <div class="gallery-featured relative overflow-hidden bg-deepslate flex items-center justify-center">
+          <video
+            id="tpu-video"
+            class="w-full h-full object-cover"
+            autoplay muted loop playsinline
+            style="width:100%;height:100%;object-fit:cover"
+          >
+            <source src="Images/TPU-v1_Inspired_AI_Accelerator.mp4" type="video/mp4">
+          </video>
+          <!-- Overlay badges -->
+          <div class="absolute top-4 right-4 flex items-center gap-2 z-10">
+            <span class="tech-lbl text-[10px] px-2 py-1 rounded bg-deepslate/80 text-copper backdrop-blur-sm">FEATURED</span>
+          </div>
+          <div class="absolute bottom-4 left-4 z-10">
+            <span class="tech-lbl text-[10px] px-2.5 py-1.5 rounded bg-deepslate/90 text-copper backdrop-blur-sm flex items-center gap-1.5 border border-copper/30">
+              <span class="iconify v-blink" data-icon="mdi:record-circle-outline" data-width="12"></span>
+              DEMO VIDEO
+            </span>
+          </div>
+          <!-- Full-screen toggle -->
+          <button onclick="openTPULightbox()" class="absolute top-4 left-4 z-10 w-9 h-9 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 hover:bg-deepslate/90 transition-all">
+            <span class="iconify" data-icon="mdi:fullscreen" data-width="18"></span>
+          </button>
+        </div>
+        <!-- Video info strip -->
+        <div class="flex items-center gap-3 px-4 py-2.5 bg-deepslate/10 border-t border-bdr/30">
+          <span class="iconify text-copper" data-icon="mdi:play-circle" data-width="16"></span>
+          <span class="tech-lbl text-[9px] text-graphite">TPU-v1 Accelerator Demo &nbsp;·&nbsp; FPGA Simulation Walkthrough</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJECT 3: FPGA DSP -->
+  <div class="project-card rounded-xl overflow-hidden bg-sand mb-12">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
+      <div class="relative flex flex-col">
+        <div class="gallery-main gallery-featured" data-gallery="dsp">
+          <img id="dsp-img" src="Images/FPGA-based_DSP_Control_System_1.jpg" alt="FPGA DSP System" class="proj-img cursor-pointer" onclick="openLightbox('dsp',0)" style="width:100%;height:100%;object-fit:cover">
+          <button onclick="galleryNav('dsp',-1)" class="gallery-nav absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-left" data-width="20"></span></button>
+          <button onclick="galleryNav('dsp',1)" class="gallery-nav absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-right" data-width="20"></span></button>
+          <div class="absolute top-4 left-4 z-10">
+            <span class="tech-lbl text-[10px] px-2 py-1 rounded bg-deepslate/80 text-scope backdrop-blur-sm">FEATURED</span>
+          </div>
+        </div>
+        <div class="flex gap-2 p-3 bg-deepslate/5 overflow-x-auto">
+          <img src="Images/FPGA-based_DSP_Control_System_1.jpg" alt="DSP View 1" class="gallery-thumb active flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('dsp','Images/FPGA-based_DSP_Control_System_1.jpg',this)">
+          <img src="Images/FPGA-based_DSP_Control_System_2.jpg" alt="DSP View 2" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('dsp','Images/FPGA-based_DSP_Control_System_2.jpg',this)">
+          <img src="Images/FPGA-based_DSP_Control_System_3.jpg" alt="DSP View 3" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('dsp','Images/FPGA-based_DSP_Control_System_3.jpg',this)">
+          <img src="Images/FPGA-based_DSP_Control_System_4.jpg" alt="DSP View 4" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('dsp','Images/FPGA-based_DSP_Control_System_4.jpg',this)">
+          <img src="Images/FPGA-based_DSP_Control_System_5.jpg" alt="DSP View 5" class="gallery-thumb flex-shrink-0 w-16 h-12 rounded cursor-pointer" onclick="setGalleryImg('dsp','Images/FPGA-based_DSP_Control_System_5.jpg',this)">
+        </div>
+      </div>
+      <div class="p-8 md:p-10 flex flex-col justify-center">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="tech-lbl text-[10px] text-scope">FPGA / DSP</span>
+          <span class="text-bdr">·</span>
+          <span class="tech-lbl text-[10px] text-graphite">2023</span>
+        </div>
+        <h3 class="font-serif text-2xl md:text-3xl text-slate mb-4">FPGA-based DSP Control System</h3>
+        <p class="text-graphite font-light text-sm leading-relaxed mb-6">Real-time digital signal processing pipeline for multi-axis motor control. Implemented PID controllers, FIR filters, and coordinate transform (Park/Clarke) entirely in hardware for sub-microsecond response times.</p>
+        <div class="grid grid-cols-3 gap-4 mb-6 py-4 border-t border-b border-bdr/40">
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">&lt;1μs</span><br><span class="tech-lbl text-[9px] text-graphite">LOOP LATENCY</span></div>
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">3 Cascaded control Loops</span><br><span class="tech-lbl text-[9px] text-graphite">SIMULTANEOUS</span></div>
+          <div><span class="metric-v font-mono text-lg text-slate font-medium">16-bit</span><br><span class="tech-lbl text-[9px] text-graphite">FIXED POINT</span></div>
+        </div>
+        <div class="flex flex-wrap gap-2 mb-6">
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">SystemVerilog</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">FIR/IIR</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">FOC</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">Park/Clarke</span>
+          <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-ivory text-graphite">ADC Interface</span>
+        </div>
+        <p class="text-xs text-graphite/70 leading-relaxed"><span class="font-medium text-graphite">Key Challenge:</span> Achieving deterministic sub-microcycle timing across the DSP pipeline while maintaining numerical stability in 16-bit fixed-point arithmetic for the Park transform.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Grid Projects -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <!-- Women Safety Wearable -->
+    <div class="project-card rounded-xl overflow-hidden bg-sand">
+      <div class="relative flex flex-col">
+        <div class="gallery-main gallery-grid" data-gallery="wear">
+          <img id="wear-img" src="Images/Women_Safety_Wearable_Device2.png" alt="Women Safety Wearable" class="proj-img cursor-pointer" onclick="openLightbox('wear',0)" style="width:100%;height:100%;object-fit:cover">
+          <button onclick="galleryNav('wear',-1)" class="gallery-nav absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-left" data-width="16"></span></button>
+          <button onclick="galleryNav('wear',1)" class="gallery-nav absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-right" data-width="16"></span></button>
+        </div>
+        <div class="flex gap-1.5 p-2 bg-deepslate/5 overflow-x-auto">
+          <img src="Images/Women_Safety_Wearable_Device2.png" alt="Wearable Front" class="gallery-thumb active flex-shrink-0 w-12 h-9 rounded cursor-pointer" onclick="setGalleryImg('wear','Images/Women_Safety_Wearable_Device2.png',this)">
+          <img src="Images/Women_Safety_Wearable_Device1.png" alt="Wearable Back" class="gallery-thumb flex-shrink-0 w-12 h-9 rounded cursor-pointer" onclick="setGalleryImg('wear','Images/Women_Safety_Wearable_Device1.png',this)">
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="tech-lbl text-[10px] text-terracotta">EMBEDDED</span>
+          <span class="text-bdr">·</span>
+          <span class="tech-lbl text-[10px] text-graphite">2023</span>
+        </div>
+        <h3 class="font-serif text-lg text-slate mb-2">Women Safety Wearable Device</h3>
+        <p class="text-graphite font-light text-xs leading-relaxed mb-4">NRF52-based wearable with GPS tracking, GSM alert system, and accelerometer-based fall detection. Custom 2-layer PCB with miniature antenna matching network.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">NRF52832</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">GPS</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">GSM</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">BLE</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Automotive ECU (no local images — kept with placeholder styling) -->
+    <div class="project-card rounded-xl overflow-hidden bg-sand">
+      <div class="relative flex flex-col">
+        <div class="gallery-grid bg-deepslate/10 flex items-center justify-center" style="overflow:hidden">
+          <div class="text-center p-6">
+            <span class="iconify text-graphite/30 mb-3" data-icon="mdi:car-cog" data-width="48"></span>
+            <p class="tech-lbl text-[9px] text-graphite/40">Hardware Documentation</p>
+            <p class="tech-lbl text-[9px] text-graphite/30">Images Available on Request</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="tech-lbl text-[10px] text-emerald">AUTOMOTIVE</span>
+          <span class="text-bdr">·</span>
+          <span class="tech-lbl text-[10px] text-graphite">2023</span>
+        </div>
+        <h3 class="font-serif text-lg text-slate mb-2">Automotive ECU Hardware</h3>
+        <p class="text-graphite font-light text-xs leading-relaxed mb-4">Automotive-grade ECU with CAN/LIN communication, reverse battery protection, and load dump survivability. Designed to meet AEC-Q100 component selection criteria.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">CAN/LIN</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">AEC-Q100</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">EMC</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">6-Layer PCB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Humanoid Shoulder -->
+    <div class="project-card rounded-xl overflow-hidden bg-sand">
+      <div class="relative flex flex-col">
+        <div class="gallery-main gallery-grid" data-gallery="humanoid">
+          <img id="humanoid-img" src="Images/Humanoid_Shoulder_Joint_Control_Electronics_1.jpeg" alt="Humanoid Shoulder Joint" class="proj-img cursor-pointer" onclick="openLightbox('humanoid',0)" style="width:100%;height:100%;object-fit:cover">
+          <button onclick="galleryNav('humanoid',-1)" class="gallery-nav absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-left" data-width="16"></span></button>
+          <button onclick="galleryNav('humanoid',1)" class="gallery-nav absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-deepslate/60 backdrop-blur-sm flex items-center justify-center text-ivory/80 border border-ivory/10 z-10"><span class="iconify" data-icon="mdi:chevron-right" data-width="16"></span></button>
+        </div>
+        <div class="flex gap-1.5 p-2 bg-deepslate/5 overflow-x-auto">
+          <img src="Images/Humanoid_Shoulder_Joint_Control_Electronics_1.jpeg" alt="Shoulder View 1" class="gallery-thumb active flex-shrink-0 w-12 h-9 rounded cursor-pointer" onclick="setGalleryImg('humanoid','Images/Humanoid_Shoulder_Joint_Control_Electronics_1.jpeg',this)">
+          <img src="Images/Humanoid_Shoulder_Joint_Control_Electronics_2.jpeg" alt="Shoulder View 2" class="gallery-thumb flex-shrink-0 w-12 h-9 rounded cursor-pointer" onclick="setGalleryImg('humanoid','Images/Humanoid_Shoulder_Joint_Control_Electronics_2.jpeg',this)">
+          <img src="Images/Humanoid_Shoulder_Joint_Control_Electronics_3.jpeg" alt="Shoulder View 3" class="gallery-thumb flex-shrink-0 w-12 h-9 rounded cursor-pointer" onclick="setGalleryImg('humanoid','Images/Humanoid_Shoulder_Joint_Control_Electronics_3.jpeg',this)">
+        </div>
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="tech-lbl text-[10px] text-copper">ROBOTICS</span>
+          <span class="text-bdr">·</span>
+          <span class="tech-lbl text-[10px] text-graphite">2022</span>
+        </div>
+        <h3 class="font-serif text-lg text-slate mb-2">Humanoid Shoulder Joint Control Electronics</h3>
+        <p class="text-graphite font-light text-xs leading-relaxed mb-4">Compact multi-DOF shoulder joint actuator electronics with dual BLDC driver, absolute encoder interface, and current-sense feedback for torque control in 80mm form factor.</p>
+        <div class="flex flex-wrap gap-1.5">
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">BLDC FOC</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">AS5047P</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">Torque Ctrl</span>
+          <span class="tech-lbl text-[9px] px-2 py-0.5 rounded bg-ivory text-graphite">4-Layer</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="section-div max-w-7xl mx-auto"></div>
+
+<!-- ===== RESEARCH & PUBLICATIONS ===== -->
+<section id="research" class="py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="w-8 h-px bg-terracotta"></div>
+    <span class="tech-lbl text-terracotta">Academic</span>
+  </div>
+  <h2 class="font-serif text-3xl md:text-5xl text-slate tracking-tight mb-4">Research &amp; Publications</h2>
+  <p class="text-graphite font-light max-w-2xl mb-12">Contributions to FPGA benchmarking, hardware acceleration, and electronic design automation research.</p>
+  <div class="space-y-4">
+    <div class="pub-card rounded-lg p-6 md:p-8 bg-ivory">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-terracotta/10 text-terracotta">ISQED 2026</span>
+            <span class="tech-lbl text-[10px] text-graphite">To Appear</span>
+          </div>
+          <h3 class="font-serif text-lg md:text-xl text-slate mb-2 leading-snug">VHDLBench: A Comprehensive Benchmark Suite for HDL Code Generation and Functional Verification with Rich Contextual Relationships for Training Custom LLMs.</h3>
+          <p class="text-graphite font-light text-sm leading-relaxed mb-3">Proposes a standardized benchmark dataset for evaluating AI-assisted HDL code generation tools, addressing the lack of rigorous evaluation frameworks in the EDA space.</p>
+          <p class="text-xs text-graphite/60"><span class="font-medium text-graphite/80">A. Sakhreliya</span>, et al.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="tech-lbl text-[10px] text-graphite/50">DOI</span>
+          <span class="w-px h-3 bg-bdr"></span>
+          <span class="iconify text-graphite/40 hover:text-terracotta transition-colors cursor-pointer" data-icon="mdi:open-in-new" data-width="16"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pub-card rounded-lg p-6 md:p-8 bg-ivory">
+      <div class="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+        <div class="flex-1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="tech-lbl text-[10px] px-2 py-0.5 rounded bg-copper/10 text-copper">RESEARCH</span>
+            <span class="tech-lbl text-[10px] text-graphite">2024 – Present</span>
+          </div>
+          <h3 class="font-serif text-lg md:text-xl text-slate mb-2 leading-snug">FPGA-Accelerated Neural Network Inference for Edge Robotics Applications</h3>
+          <p class="text-graphite font-light text-sm leading-relaxed mb-3">Exploring quantization-aware training and hardware-aware neural architecture search to deploy efficient inference on resource-constrained FPGA platforms for real-time robotic perception.</p>
+          <p class="text-xs text-graphite/60"><span class="font-medium text-graphite/80">A. Sakhreliya</span>, et al.</p>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <span class="tech-lbl text-[10px] text-graphite/50">In Progress</span>
+          <span class="w-px h-3 bg-bdr"></span>
+          <span class="iconify text-graphite/40 hover:text-copper transition-colors cursor-pointer" data-icon="mdi:file-document-outline" data-width="16"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="section-div max-w-7xl mx-auto"></div>
+
+<!-- ===== PHILOSOPHY ===== -->
+<section id="philosophy" class="py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="w-8 h-px bg-terracotta"></div>
+    <span class="tech-lbl text-terracotta">Approach</span>
+  </div>
+  <h2 class="font-serif text-3xl md:text-5xl text-slate tracking-tight mb-16">Engineering Philosophy</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="text-center md:text-left">
+      <div class="w-14 h-14 rounded-full bg-terracotta/10 flex items-center justify-center mx-auto md:mx-0 mb-6">
+        <span class="iconify text-terracotta" data-icon="mdi:shield-check-outline" data-width="28"></span>
+      </div>
+      <h3 class="font-serif text-xl text-slate mb-3">Reliability First</h3>
+      <p class="text-graphite font-light text-sm leading-relaxed">Hardware must work — not just in the lab, but in the field. I design with worst-case margins, robust fault handling, and extensive validation because a system that fails in production has already failed its purpose.</p>
+    </div>
+    <div class="text-center md:text-left">
+      <div class="w-14 h-14 rounded-full bg-scope/10 flex items-center justify-center mx-auto md:mx-0 mb-6">
+        <span class="iconify text-scope" data-icon="mdi:layers-triple-outline" data-width="28"></span>
+      </div>
+      <h3 class="font-serif text-xl text-slate mb-3">Full-Stack Thinking</h3>
+      <p class="text-graphite font-light text-sm leading-relaxed">The best hardware engineers understand the entire stack. From transistor-level design through firmware and system architecture — every layer informs the others, and optimization happens at the boundaries.</p>
+    </div>
+    <div class="text-center md:text-left">
+      <div class="w-14 h-14 rounded-full bg-copper/10 flex items-center justify-center mx-auto md:mx-0 mb-6">
+        <span class="iconify text-copper" data-icon="mdi:chart-bell-curve-cumulative" data-width="28"></span>
+      </div>
+      <h3 class="font-serif text-xl text-slate mb-3">Measure Everything</h3>
+      <p class="text-graphite font-light text-sm leading-relaxed">In God we trust; all others must bring data. Oscilloscope traces, thermal profiles, timing reports — quantitative validation beats intuition every time. If you can't measure it, you can't improve it.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="section-div max-w-7xl mx-auto"></div>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-6 md:px-10">
+  <div class="flex items-center gap-3 mb-4">
+    <div class="w-8 h-px bg-terracotta"></div>
+    <span class="tech-lbl text-terracotta">Connect</span>
+  </div>
+  <h2 class="font-serif text-3xl md:text-5xl text-slate tracking-tight mb-6">Let's Build Something</h2>
+  <p class="text-graphite font-light max-w-xl mb-12">I'm always open to discussing hardware engineering opportunities, research collaborations, or interesting technical challenges.</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="space-y-6">
+      <a href="mailto:arpitsakhreliya@gmail.com" class="flex items-center gap-4 p-5 rounded-lg bg-ivory border border-bdr/30 hover:border-terracotta/30 hover:bg-sand/50 transition-all group">
+        <div class="w-11 h-11 rounded-lg bg-terracotta/10 flex items-center justify-center group-hover:bg-terracotta/20 transition-colors">
+          <span class="iconify text-terracotta" data-icon="mdi:email-outline" data-width="22"></span>
+        </div>
+        <div>
+          <p class="text-xs text-graphite/60 tech-lbl">Email</p>
+          <p class="text-sm text-slate font-medium">arpitsakhreliya@gmail.com</p>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/arpitsakhreliya" target="_blank" class="flex items-center gap-4 p-5 rounded-lg bg-ivory border border-bdr/30 hover:border-linkedin/30 hover:bg-sand/50 transition-all group">
+        <div class="w-11 h-11 rounded-lg bg-linkedin/10 flex items-center justify-center group-hover:bg-linkedin/20 transition-colors">
+          <span class="iconify text-linkedin" data-icon="mdi:linkedin" data-width="22"></span>
+        </div>
+        <div>
+          <p class="text-xs text-graphite/60 tech-lbl">LinkedIn</p>
+          <p class="text-sm text-slate font-medium">linkedin.com/in/arpitsakhreliya</p>
+        </div>
+      </a>
+      <a href="https://github.com/Arpit-sakhreliya" target="_blank" class="flex items-center gap-4 p-5 rounded-lg bg-ivory border border-bdr/30 hover:border-graphite/30 hover:bg-sand/50 transition-all group">
+        <div class="w-11 h-11 rounded-lg bg-graphite/10 flex items-center justify-center group-hover:bg-graphite/20 transition-colors">
+          <span class="iconify text-graphite" data-icon="mdi:github" data-width="22"></span>
+        </div>
+        <div>
+          <p class="text-xs text-graphite/60 tech-lbl">GitHub</p>
+          <p class="text-sm text-slate font-medium">github.com/arpitsakhreliya</p>
+        </div>
+      </a>
+    </div>
+    <div class="flex flex-col justify-between">
+      <div class="p-6 rounded-lg bg-deepslate text-ivory blueprint-g">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="w-2 h-2 rounded-full bg-scope led-blink"></span>
+          <span class="tech-lbl text-scope">Status</span>
+        </div>
+        <p class="font-serif text-xl mb-2">Open to Opportunities</p>
+        <p class="text-ivory/50 text-sm font-light leading-relaxed">Actively seeking full-time hardware engineering roles in robotics, embedded systems, or FPGA design starting Spring 2026.</p>
+      </div>
+      <a href="ArpitSakhreliya.pdf" class="cta-p mt-6 px-6 py-3 text-sm font-medium tracking-wide rounded text-center flex items-center justify-center gap-2">
+        <span class="iconify" data-icon="mdi:file-download-outline" data-width="18"></span>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-deepslate paper-tex">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="py-16 md:py-20 grid grid-cols-1 md:grid-cols-4 gap-12">
+      <div class="md:col-span-2">
+        <a href="#" class="font-serif text-2xl text-ivory tracking-tight">Arpit Sakhreliya</a>
+        <p class="mt-3 text-ivory/40 text-sm font-light leading-relaxed max-w-sm">Hardware Engineer building reliable intelligent systems at the intersection of robotics, embedded computing, and computer architecture.</p>
+        <div class="flex items-center gap-2 mt-5">
+          <span class="relative flex h-2 w-2"><span class="pulse-ring absolute inline-flex h-full w-full rounded-full bg-scope opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-scope led-blink"></span></span>
+          <span class="tech-lbl text-scope text-[9px]">Available for Opportunities</span>
+        </div>
+      </div>
+      <div>
+        <h4 class="tech-lbl text-ivory/30 mb-5 text-[9px]">Navigation</h4>
+        <div class="space-y-3">
+          <a href="#projects" class="footer-link block text-sm">Projects</a>
+          <a href="#research" class="footer-link block text-sm">Research</a>
+          <a href="#philosophy" class="footer-link block text-sm">Philosophy</a>
+          <a href="#contact" class="footer-link block text-sm">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="tech-lbl text-ivory/30 mb-5 text-[9px]">Connect</h4>
+        <div class="space-y-3">
+          <a href="mailto:arpitsakhreliya@gmail.com" class="footer-link flex items-center gap-2 text-sm hover:text-terracotta">
+            <span class="iconify" data-icon="mdi:email-outline" data-width="16"></span> Email
+          </a>
+          <a href="https://linkedin.com/in/arpitsakhreliya" target="_blank" class="footer-link flex items-center gap-2 text-sm hover:text-linkedin">
+            <span class="iconify" data-icon="mdi:linkedin" data-width="16"></span> LinkedIn
+          </a>
+          <a href="https://github.com/arpitsakhreliya" target="_blank" class="footer-link flex items-center gap-2 text-sm hover:text-ivory">
+            <span class="iconify" data-icon="mdi:github" data-width="16"></span> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-ivory/10 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-ivory/30 text-xs">© 2025 Arpit Sakhreliya. Designed &amp; built with precision.</p>
+      <div class="flex items-center gap-4">
+        <a href="mailto:arpitsakhreliya@gmail.com" class="footer-social w-9 h-9 rounded-lg flex items-center justify-center text-ivory/50 hover:text-terracotta hover:border-terracotta/40 hover:bg-terracotta/10">
+          <span class="iconify" data-icon="mdi:email-outline" data-width="18"></span>
+        </a>
+        <a href="https://linkedin.com/in/arpitsakhreliya" target="_blank" class="footer-social w-9 h-9 rounded-lg flex items-center justify-center text-ivory/50 hover:text-linkedin hover:border-linkedin/40 hover:bg-linkedin/10">
+          <span class="iconify" data-icon="mdi:linkedin" data-width="18"></span>
+        </a>
+        <a href="https://github.com/arpitsakhreliya" target="_blank" class="footer-social w-9 h-9 rounded-lg flex items-center justify-center text-ivory/50 hover:text-ivory hover:border-ivory/40 hover:bg-ivory/10">
+          <span class="iconify" data-icon="mdi:github" data-width="18"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// =========================================================
+// GALLERY DATA — all local image paths (relative to HTML)
+// =========================================================
+const galleryData = {
+  amr: [
+    'Images/project1_1.png',
+    'Images/project1_2.png',
+    'Images/Project1_3.png',
+    'Images/project1_4.png',
+    'Images/project1_5.png'
+  ],
+  dsp: [
+    'Images/FPGA-based_DSP_Control_System_1.jpg',
+    'Images/FPGA-based_DSP_Control_System_2.jpg',
+    'Images/FPGA-based_DSP_Control_System_3.jpg',
+    'Images/FPGA-based_DSP_Control_System_4.jpg',
+    'Images/FPGA-based_DSP_Control_System_5.jpg'
+  ],
+  wear: [
+    'Images/Women_Safety_Wearable_Device2.png',
+    'Images/Women_Safety_Wearable_Device1.png'
+  ],
+  humanoid: [
+    'Images/Humanoid_Shoulder_Joint_Control_Electronics_1.jpeg',
+    'Images/Humanoid_Shoulder_Joint_Control_Electronics_2.jpeg',
+    'Images/Humanoid_Shoulder_Joint_Control_Electronics_3.jpeg'
+  ]
+};
+
+const galleryIndex = {};
+
+// =========================================================
+// GALLERY FUNCTIONS
+// =========================================================
+function setGalleryImg(galleryId, src, thumbEl) {
+  const mainImg = document.getElementById(galleryId + '-img');
+  if (!mainImg) return;
+  mainImg.style.opacity = '0';
+  setTimeout(() => { mainImg.src = src; mainImg.style.opacity = '1'; }, 200);
+  const container = thumbEl.parentElement;
+  container.querySelectorAll('.gallery-thumb').forEach(t => t.classList.remove('active'));
+  thumbEl.classList.add('active');
+  const imgs = galleryData[galleryId];
+  if (imgs) {
+    const idx = imgs.indexOf(src);
+    galleryIndex[galleryId] = idx >= 0 ? idx : 0;
+  }
+}
+
+function galleryNav(galleryId, dir) {
+  const imgs = galleryData[galleryId];
+  if (!imgs || imgs.length === 0) return;
+  if (galleryIndex[galleryId] === undefined) galleryIndex[galleryId] = 0;
+  galleryIndex[galleryId] = (galleryIndex[galleryId] + dir + imgs.length) % imgs.length;
+  const idx = galleryIndex[galleryId];
+  const mainImg = document.getElementById(galleryId + '-img');
+  if (mainImg) {
+    mainImg.style.opacity = '0';
+    setTimeout(() => { mainImg.src = imgs[idx]; mainImg.style.opacity = '1'; }, 200);
+  }
+  // Update thumbnail active state
+  const galleryEl = document.querySelector(`[data-gallery="${galleryId}"]`);
+  if (galleryEl) {
+    const thumbRow = galleryEl.parentElement.querySelector('.flex.gap-1\\.5, .flex.gap-2');
+    if (thumbRow) {
+      thumbRow.querySelectorAll('.gallery-thumb').forEach((t, i) => {
+        t.classList.toggle('active', i === idx);
+      });
+    }
+  }
+}
+
+// =========================================================
+// LIGHTBOX
+// =========================================================
+let lbGallery = '';
+let lbIndex = 0;
+
+function openLightbox(galleryId, idx) {
+  lbGallery = galleryId;
+  lbIndex = idx !== undefined ? idx : (galleryIndex[galleryId] || 0);
+  const imgs = galleryData[galleryId];
+  if (!imgs || imgs.length === 0) return;
+  showLightboxMedia(imgs[lbIndex]);
+  document.getElementById('lbCounter').textContent = `${lbIndex + 1} / ${imgs.length}`;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function openTPULightbox() {
+  const container = document.getElementById('lbMediaContainer');
+  container.innerHTML = '';
+  const vid = document.createElement('video');
+  vid.src = 'Images/TPU-v1_Inspired_AI_Accelerator.mp4';
+  vid.controls = true;
+  vid.autoplay = true;
+  vid.style.maxWidth = '90vw';
+  vid.style.maxHeight = '85vh';
+  vid.style.borderRadius = '4px';
+  container.appendChild(vid);
+  document.getElementById('lbCounter').textContent = 'TPU Demo Video';
+  // Hide nav for video
+  document.querySelectorAll('.lightbox-nav').forEach(n => n.style.display = 'none');
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function showLightboxMedia(src) {
+  const container = document.getElementById('lbMediaContainer');
+  container.innerHTML = '';
+  document.querySelectorAll('.lightbox-nav').forEach(n => n.style.display = 'flex');
+  const img = document.createElement('img');
+  img.src = src;
+  img.alt = 'Gallery Image';
+  img.style.maxWidth = '90vw';
+  img.style.maxHeight = '85vh';
+  img.style.objectFit = 'contain';
+  img.style.borderRadius = '4px';
+  container.appendChild(img);
+}
+
+function closeLightbox(e, force) {
+  if (force || e.target === document.getElementById('lightbox')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+    // Stop any video in lightbox
+    const vid = document.querySelector('#lbMediaContainer video');
+    if (vid) vid.pause();
+    document.querySelectorAll('.lightbox-nav').forEach(n => n.style.display = 'flex');
+  }
+}
+
+function lbNav(dir) {
+  const imgs = galleryData[lbGallery];
+  if (!imgs || imgs.length === 0) return;
+  lbIndex = (lbIndex + dir + imgs.length) % imgs.length;
+  showLightboxMedia(imgs[lbIndex]);
+  document.getElementById('lbCounter').textContent = `${lbIndex + 1} / ${imgs.length}`;
+}
+
+document.addEventListener('keydown', (e) => {
+  const lb = document.getElementById('lightbox');
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox(e, true);
+  if (e.key === 'ArrowLeft') lbNav(-1);
+  if (e.key === 'ArrowRight') lbNav(1);
+});
+
+// =========================================================
+// NAVBAR SCROLL
+// =========================================================
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('nav-solid', window.scrollY > 80);
+});
+
+// =========================================================
+// MOBILE MENU
+// =========================================================
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+});
+document.getElementById('menuClose').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.remove('open');
+  document.body.style.overflow = '';
+});
+document.querySelectorAll('.mob-link').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobileMenu').classList.remove('open');
+    document.body.style.overflow = '';
+  });
+});
+
+// =========================================================
+// SCROLL-TRIGGERED FADE IN
+// =========================================================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.project-card, .pub-card, .focus-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+</script>
+
+</body>
+</html>
